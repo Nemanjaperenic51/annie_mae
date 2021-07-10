@@ -1,0 +1,331 @@
+/*******************************************************************
+********************************************************************
+********************************************************************
+                    V A R I B L E S
+********************************************************************
+********************************************************************
+*******************************************************************/
+
+$yellow: #ecd048;
+$green: #0d9968;
+$gray: #383838;
+$white: #fff;
+$black: #000;
+$font-family: 'Lato', sans-serif;
+$accentsFont: 'Arizonia', cursive;
+$font-size: 16px;
+$transition: .4s ease;
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                    M I X I N S
+********************************************************************
+********************************************************************
+*******************************************************************/
+
+@mixin bgimg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+        flex-direction: column;
+}
+
+@mixin form {
+        width: 100%;
+        padding: 10px;
+     border-radius: 20px 40px;
+        border: none;
+     font-size: 1.2rem;
+    font-weight: 700;
+    color: $gray;
+    opacity: .6;
+    margin-bottom: 10px;
+}
+
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                    B A S I C   S T Y L E
+********************************************************************
+********************************************************************
+*******************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    font-size: $font-size;
+    color: $gray;
+    padding: 10px 0 30px 0;
+    position: relative;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: $accentsFont;
+    color: $gray;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    &:hover {
+        transition: $transition;
+    }
+}
+.singup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $green;
+    color: $white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.4rem;
+}
+
+.main-headings {
+    font-size: 5rem;
+    margin-bottom: 15px;
+    
+}
+
+.underline {
+    background: $gray;
+    height: 8px;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.icons {
+    display: flex;
+    list-style: none;
+    li {
+        margin-right: 30px;
+        a {
+            font-size: 2rem;
+             &:hover {
+                color: $green;
+                transition: .7s;
+            }
+        }
+
+        i:hover {
+            animation: punkrug 0.7s linear;
+        }
+       @keyframes punkrug {
+           100% {
+               transform: rotate(360deg);
+           }
+       }
+    }
+}
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        N A V
+********************************************************************
+********************************************************************
+*******************************************************************/
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    .logo {
+        font-family: $accentsFont;
+        font-size: 3rem;
+        color: $white;
+        background: $gray;
+        padding: 10px 15px;
+        border-radius: 10px 35px;
+        text-align: center;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .active {
+            background: $gray;
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: $white;
+        }
+        li {
+            list-style: none;
+            margin-left: 50px;
+            @media (max-width: 768px) {
+                margin: 20px 5px 5px 5px;
+            }
+
+            a{
+                font-size: 1.2rem;
+                color: $gray;
+                font-weight: 700;
+                text-transform: uppercase;
+                &:hover {
+                    background: transparent;
+                    color: rgb(202, 0, 0);
+                }
+            }
+        }
+       
+    }
+}
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        H O M  E
+********************************************************************
+********************************************************************
+*******************************************************************/
+#home {
+    background-image:linear-gradient(rgba(236,208,72, .5),rgba(236,208,72, .5)), url(img/home-background.png);
+    position: relative;
+    @include bgimg;
+    @media (max-width: 768px) {
+        background-image:linear-gradient(rgba(236,208,72, .8),rgba(236,208,72, .8)), url(img/home-background.png);
+        background-position: right;
+    }
+
+    .about-home {
+        display: flex;
+        @include flexcenter;
+        height: 80vh;
+        
+        p{
+            font-size: 1.2rem;
+            width: 60%;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+    }
+
+
+}
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        A B O U T
+********************************************************************
+********************************************************************
+*******************************************************************/
+
+#about {
+    background: $green;
+    .about-page {
+        margin-top: 150px;
+        padding-bottom: 50px;
+        p {
+            font-size: 1.4rem;
+            text-align: justify;
+            .img-left {
+                float: left;
+                width: 50%;
+                &:hover {
+                    transform: rotate(360deg);
+                    cursor: pointer;
+                    transition: $transition;
+                }
+                
+            }
+            .img-right {
+                float: right;
+                width: 50%;
+                &:hover {
+                    transform: rotate(-360deg);
+                    cursor: pointer;
+                    transition: $transition;
+                }
+            }
+
+            
+        }
+    }
+    
+}
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        C O N T A C T
+********************************************************************
+********************************************************************
+*******************************************************************/
+
+#contact {
+    background: url(img/contact-pozadina.png);
+    @include bgimg;
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 150px;
+
+        .contact-text {
+            font-size: 1.5rem;
+            flex: 1;
+            @media (max-width: 768px) {
+                flex: 0 0 100%;
+            }
+            .copy {
+                padding-bottom: 150px;
+            }
+        }
+
+        .forma {
+            flex: 1;
+
+            @media (max-width: 768px) {
+                flex: 0 0 100%;
+                margin-top: 70px;
+            }
+
+            form {
+                
+                input {
+                   @include form
+                }
+                textarea {
+                    @include form
+                }
+                input[type="submit"] {
+                    background: $gray;
+                    width: 300px;
+                    color: $white;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    opacity: 1;
+
+                    &:hover {
+                        background: $black;
+                        transition: $transition;
+                    }
+                }
+            }
+        }
+    }
+
+    
+}

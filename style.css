@@ -1,0 +1,308 @@
+/*******************************************************************
+********************************************************************
+********************************************************************
+                    V A R I B L E S
+********************************************************************
+********************************************************************
+*******************************************************************/
+/*******************************************************************
+********************************************************************
+********************************************************************
+                    M I X I N S
+********************************************************************
+********************************************************************
+*******************************************************************/
+/*******************************************************************
+********************************************************************
+********************************************************************
+                    B A S I C   S T Y L E
+********************************************************************
+********************************************************************
+*******************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #383838;
+  padding: 10px 0 30px 0;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Arizonia", cursive;
+  color: #383838;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  transition: 0.4s ease;
+}
+
+.singup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0d9968;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.4rem;
+}
+
+.main-headings {
+  font-size: 5rem;
+  margin-bottom: 15px;
+}
+
+.underline {
+  background: #383838;
+  height: 8px;
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.icons {
+  display: flex;
+  list-style: none;
+}
+.icons li {
+  margin-right: 30px;
+}
+.icons li a {
+  font-size: 2rem;
+}
+.icons li a:hover {
+  color: #0d9968;
+  transition: 0.7s;
+}
+.icons li i:hover {
+  animation: punkrug 0.7s linear;
+}
+@keyframes punkrug {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        N A V
+********************************************************************
+********************************************************************
+*******************************************************************/
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+}
+nav .logo {
+  font-family: "Arizonia", cursive;
+  font-size: 3rem;
+  color: #fff;
+  background: #383838;
+  padding: 10px 15px;
+  border-radius: 10px 35px;
+  text-align: center;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul .active {
+  background: #383838;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #fff;
+}
+nav ul li {
+  list-style: none;
+  margin-left: 50px;
+}
+@media (max-width: 768px) {
+  nav ul li {
+    margin: 20px 5px 5px 5px;
+  }
+}
+nav ul li a {
+  font-size: 1.2rem;
+  color: #383838;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+nav ul li a:hover {
+  background: transparent;
+  color: #ca0000;
+}
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        H O M  E
+********************************************************************
+********************************************************************
+*******************************************************************/
+#home {
+  background-image: linear-gradient(rgba(236, 208, 72, 0.5), rgba(236, 208, 72, 0.5)), url(img/home-background.png);
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  #home {
+    background-image: linear-gradient(rgba(236, 208, 72, 0.8), rgba(236, 208, 72, 0.8)), url(img/home-background.png);
+    background-position: right;
+  }
+}
+#home .about-home {
+  display: flex;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+#home .about-home p {
+  font-size: 1.2rem;
+  width: 60%;
+}
+@media (max-width: 768px) {
+  #home .about-home p {
+    width: 100%;
+  }
+}
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        A B O U T
+********************************************************************
+********************************************************************
+*******************************************************************/
+#about {
+  background: #0d9968;
+}
+#about .about-page {
+  margin-top: 150px;
+  padding-bottom: 50px;
+}
+#about .about-page p {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+#about .about-page p .img-left {
+  float: left;
+  width: 50%;
+}
+#about .about-page p .img-left:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+#about .about-page p .img-right {
+  float: right;
+  width: 50%;
+}
+#about .about-page p .img-right:hover {
+  transform: rotate(-360deg);
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+/*******************************************************************
+********************************************************************
+********************************************************************
+                        C O N T A C T
+********************************************************************
+********************************************************************
+*******************************************************************/
+#contact {
+  background: url(img/contact-pozadina.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#contact .contact {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 150px;
+}
+#contact .contact .contact-text {
+  font-size: 1.5rem;
+  flex: 1;
+}
+@media (max-width: 768px) {
+  #contact .contact .contact-text {
+    flex: 0 0 100%;
+  }
+}
+#contact .contact .contact-text .copy {
+  padding-bottom: 150px;
+}
+#contact .contact .forma {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  #contact .contact .forma {
+    flex: 0 0 100%;
+    margin-top: 70px;
+  }
+}
+#contact .contact .forma form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px 40px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #383838;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+#contact .contact .forma form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px 40px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #383838;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+#contact .contact .forma form input[type=submit] {
+  background: #383838;
+  width: 300px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+  opacity: 1;
+}
+#contact .contact .forma form input[type=submit]:hover {
+  background: #000;
+  transition: 0.4s ease;
+}
+
+/*# sourceMappingURL=style.css.map */
